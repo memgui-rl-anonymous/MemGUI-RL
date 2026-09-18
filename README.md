@@ -7,9 +7,9 @@ into **MemGUI-8B-RL**, together with the ConAct verifier, the folding-aware samp
 launch scripts of every training run reported in the paper.
 
 * Project page: https://memgui-rl-anonymous.github.io/
-* Model: https://huggingface.co/memgui-rl-anonymous/MemGUI-8B-RL
-* Training data: https://huggingface.co/datasets/memgui-rl-anonymous/MemGUI-3K-Verl
-* Evaluation logs: https://huggingface.co/datasets/memgui-rl-anonymous/MemGUI-RL-Eval
+* Model: https://huggingface.co/memgui-rl/MemGUI-8B-RL
+* Training data: https://huggingface.co/datasets/memgui-rl/MemGUI-3K-Verl
+* Evaluation logs: https://huggingface.co/datasets/memgui-rl/MemGUI-RL-Eval
 
 The trainer is a fork of [EasyR1](https://github.com/hiyouga/EasyR1) / [verl](https://github.com/volcengine/verl)
 (Apache-2.0). Everything specific to this paper lives in the files listed below.
@@ -62,7 +62,7 @@ The reported runs use 8 GPUs (80 GB), vLLM rollouts, FSDP training and bf16.
 ## Data
 
 1. Download [MemGUI-3K](https://huggingface.co/datasets/memgui-agent-anonymous/MemGUI-3K)
-   (screenshots) and [MemGUI-3K-Verl](https://huggingface.co/datasets/memgui-rl-anonymous/MemGUI-3K-Verl)
+   (screenshots) and [MemGUI-3K-Verl](https://huggingface.co/datasets/memgui-rl/MemGUI-3K-Verl)
    (annotated states in conversation format: `memgui3k_train_verl.json`, 73,807 states of
    2,661 trajectories; `memgui3k_test_verl.json`, 8,296 states of 295 held-out trajectories).
 2. Image references in the JSON files are relative paths of the form `MemGUI-3K/images/<file>.png`.

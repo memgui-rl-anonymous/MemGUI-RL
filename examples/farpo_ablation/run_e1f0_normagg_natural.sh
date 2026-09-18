@@ -14,7 +14,7 @@ fi
 # 2. Run from the repository root
 cd "$(dirname "${BASH_SOURCE[0]}")/../.."
 
-# 3. Paths: MemGUI-3K-Verl JSON files (https://huggingface.co/datasets/memgui-rl-anonymous/MemGUI-3K-Verl)
+# 3. Paths: MemGUI-3K-Verl JSON files (https://huggingface.co/datasets/memgui-rl/MemGUI-3K-Verl)
 #    and the SFT initialisation (https://huggingface.co/memgui-agent-anonymous/MemGUI-8B-SFT)
 DATA_DIR="${MEMGUI3K_VERL_DIR:-data/MemGUI-3K-Verl}"
 SFT_MODEL="${MEMGUI_SFT_MODEL:-checkpoints/MemGUI-8B-SFT}"
