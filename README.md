@@ -1,7 +1,7 @@
 # MemGUI-RL: Reinforcement Learning for Proactive Context Management in Long-Horizon Mobile GUI Agents
 
 Anonymous code release for the ICLR 2027 submission *MemGUI-RL*. The repository contains the
-training code of **FARPO** (Folding-Aware Reward-decoupled Policy Optimization), the RL
+training code of **FARPO** (Folding-Aware Reward-Decoupled Policy Optimization), the RL
 recipe that turns [MemGUI-8B-SFT](https://huggingface.co/memgui-agent-anonymous/MemGUI-8B-SFT)
 into **MemGUI-8B-RL**, together with the ConAct verifier, the folding-aware sampler and the
 launch scripts of every training run reported in the paper.
