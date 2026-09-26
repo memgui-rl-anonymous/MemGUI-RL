@@ -30,14 +30,15 @@ policy collapses to step-only folding. FARPO
    (`--train_folding_filter_mode span_with_step_mix --span_step_mix_ratio 9:1`,
    `scripts/filter_mobilese_by_folding.py`).
 
-Both mechanisms are ablated by the four launchers in `examples/farpo_ablation/`.
+The paper adds the two mechanisms one at a time (GRPO recipe -> + reward decoupling -> + folding-aware
+sampling); the three launchers in `examples/farpo_ablation/` reproduce these runs.
 
 ## Repository layout
 
 | path | content |
 | --- | --- |
 | `examples/memgui_8b_farpo.sh` | main recipe: data filtering, estimator choice, reward weights, all hyper-parameters |
-| `examples/farpo_ablation/run_e{0,1}f{0,1}_*.sh` | the 2x2 estimator x sampling ablation (`e1f1` = full FARPO = MemGUI-8B-RL) |
+| `examples/farpo_ablation/run_e{0f0,1f0,1f1}_*.sh` | the stepwise ablation: GRPO recipe, + reward decoupling, + folding-aware sampling (`e1f1` = full FARPO = MemGUI-8B-RL) |
 | `examples/reward_function/r1gui_memgui.py` | ConAct verifier (four reward components), see `docs/memgui_reward_function.md` |
 | `examples/format_prompt/r1gui_memgui_{system,user}.jinja` | ConAct prompt templates |
 | `scripts/filter_mobilese_by_folding.py` | folding-aware sampling (`span_only`, `span_with_step_mix`, `valid_natural_matched`) |
@@ -89,7 +90,6 @@ with eps_lo = 0.2, eps_hi = 0.3, c = 3, KL beta = 0.01, w = (0.1, 0.4, 0.4, 0.1)
 export MEMGUI_SFT_MODEL=/path/to/MemGUI-8B-SFT
 bash examples/farpo_ablation/run_e1f1_farpo_full.sh        # FARPO  -> MemGUI-8B-RL
 bash examples/farpo_ablation/run_e1f0_normagg_natural.sh   # reward decoupling, natural sampling
-bash examples/farpo_ablation/run_e0f1_scalar_foldaware.sh  # scalar estimator, folding-aware sampling
 bash examples/farpo_ablation/run_e0f0_scalar_natural.sh    # GRPO recipe (scalar, natural)
 ```
 
