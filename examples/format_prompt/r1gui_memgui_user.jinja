@@ -1,0 +1,21 @@
+### User Query
+{{ instruction }}
+
+### Multi-Scale State Summaries (Compressed History)
+{{ state_summaries if state_summaries else "  (no previous steps)" }}
+
+### Latest Interaction (To be folded this turn)
+{{ latest_interaction if latest_interaction else "  (no previous interaction)" }}
+
+### Current Memory State
+{{ memory_state if memory_state else "  (empty)" }}
+
+### Current Screenshot
+<image>
+
+Please analyze the screenshot and determine your next action. Remember to:
+1. Output <thinking> with your reasoning
+2. {{ "Skip <folding> for the first step" if is_first_step else "Output <folding> to compress your previous step(s)" }}
+3. Output <tool_call> with your action
+4. Output <ui_observation> with **DETAILED** screen description (include ALL task-relevant info: exact text, numbers, prices, names, counts visible on screen)
+5. Output <action_intent> describing your planned action
